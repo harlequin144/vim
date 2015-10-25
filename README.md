@@ -3,14 +3,15 @@
 ## Installation
 
 ```bash
-git clone https://github/havenotsetupgithubyet ~/.vim
+git clone https://github/harlequin144/vim.git ~/.vim
 ```
 
 ## Setup
 There are two options:
-symlink the `.vimrc` in this repo to the `~/.vimrc`
+symlink the `.vimrc` in this repo to `~/.vimrc`
 ```bash
-ln .vimrc ~/.vimrc
+cd ~
+ln .vim/.vimrc 
 ```
 or make `~/.vimrc` look like this:
 ```bash
