@@ -2,16 +2,19 @@
 
 ## Installation
 
-```git clone https://github/havenotsetupgithubyet ~/.vim
+```bash
+git clone https://github/havenotsetupgithubyet ~/.vim
 ```
 
 ## Setup
 There are two options:
 symlink the `.vimrc` in this repo to the `~/.vimrc`
-```ln .vimrc ~/.vimrc
+```bash
+ln .vimrc ~/.vimrc
 ```
 or make `~/.vimrc` look like this:
-```runtime vimrc
+```bash
+runtime vimrc
 ```
 
 
