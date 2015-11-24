@@ -10,7 +10,7 @@ use `~/vimfiles`. In gvim, this can be verified with `:version`.
 git clone https://github/harlequin144/vim.git ~/.vim
 ```
 
-#Create The `vimrc` and `gvimrc` Files
+###Create The `vimrc` and `gvimrc` Files
 For linux:
 
 ```bash
@@ -22,14 +22,14 @@ Skip this step for windows. The `_vimrc` file within the vim repo serves this
 purpose. 
 
 
-#Update The Submodules
+###Update The Submodules
 
 ```bash
 git submodule init
 git submodule update
 ```
 
-#Upgrading Plugins
+###Upgrading Plugins
 ```bash
 cd ~/.vim/bundle/plugin_dir
 git pull origin master
