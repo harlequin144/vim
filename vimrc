@@ -35,6 +35,8 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'unblevable/quick-scope'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'Chiel92/vim-autoformat'
+" Plugin 'Valloric/YouCompleteMe'
 
 
 " All of your Plugins must be added before the following line
@@ -54,6 +56,18 @@ filetype plugin indent on    " required by Vundle
 " Put your non-Plugin stuff after this line
 
 
+" Autoformat Settings
+map <Leader>f  :Autoformat<CR>
+let g:autoformat_verbosemode = 1
+
+let g:formatdef_my_custom_python = '"python -m autopep8 - --aggressive --aggressive"'
+let g:formatters_python = ['my_custom_python']
+
+" let g:formatdef_my_custom_cs = '"C:\Users\dythompson\Downloads\AStyle_2.05.1_windows\AStyle\bin\AStyle.exe"'
+" let g:formatters_cs = ['my_custom_cs']
+
+
+" General
 
 syntax enable
 set background=dark " dark | light

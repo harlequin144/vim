@@ -34,8 +34,11 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/vimfiles/bundle/Vundle.vim
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
-####Install Plugins
+###Install Plugins
 In Vim:
 ```bash
 :PluginInstall
 ```
+
+###Install Plugin Programs
+Right now, just autopep8. Looking to get AStyle in later and also YouCompleteMe.
