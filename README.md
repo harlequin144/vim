@@ -22,22 +22,20 @@ Skip this step for windows. The `_vimrc` file within the vim repo serves this
 purpose. 
 
 
-###Update The Submodules
+###Clone Vundle
 
+####Windows
 ```bash
-git submodule init
-git submodule update
+git clone https://github.com/gmarik/Vundle.vim.git ~/vimfiles/bundle/Vundle.vim
 ```
 
-###Upgrading Plugins
+####Linux
 ```bash
-cd ~/.vim/bundle/plugin_dir
-git pull origin master
-```
-or
-
-```bash
-cd ~/.vim/
-git submodule foreach git pull origin master
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
+####Install Plugins
+In Vim:
+```bash
+:PluginInstall
+```

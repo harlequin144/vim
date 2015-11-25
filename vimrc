@@ -1,30 +1,63 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+if has('win32') || has('win64')
+  set rtp+=~/vimfiles/bundle/Vundle.vim/
+  call vundle#rc('$HOME/vimfiles/bundle/')
+else
+  " Usual quickstart instructions
+  set rtp+=~/.vim/bundle/vundle/
+  call vundle#rc()
+endif
+call vundle#begin()
+
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+"Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+"Plugin 'L9'
+" Git plugin not hosted on GitHub
+"Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+"Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Avoid a name conflict with L9
+"Plugin 'user/L9', {'name': 'newL9'}
+
+
+Plugin 'unblevable/quick-scope'
+Plugin 'altercation/vim-colors-solarized'
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required by Vundle
+filetype plugin indent on    " required by Vundle
+
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+
+
 syntax enable
-set background=dark
+set background=dark " dark | light
 colorscheme solarized
-
-" This facilitates keeping vim-pathogen in the bundle dir per the recommendation
-" in vim-pathogen's faq.
-" runtime bundle/vim-pathogen/autoload/pathogen.vim
-
-"enabling pathogen and solarized
-" set t_Co=16
-" execute pathogen#infect()
-" syntax on
-" set background=dark " dark | light "
-" colorscheme solarized
-
-" Enable file type detection.
-" Use the default filetype settings, so that mail gets 'tw' set to 72,
-" 'cindent' is on in C files, etc.
-" Also load indent files, to automatically do language-dependent indenting.
-filetype plugin indent on
-
-
-
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-" set nocompatible
-
 
 set title " This gives e.g. | page.html (~) - VIM |.
 
