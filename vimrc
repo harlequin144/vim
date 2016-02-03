@@ -3,12 +3,12 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 if has('win32') || has('win64')
-  set rtp+=~/vimfiles/bundle/Vundle.vim/
-  call vundle#rc('$HOME/vimfiles/bundle/')
+    set rtp+=~/vimfiles/bundle/Vundle.vim/
+    call vundle#rc('$HOME/vimfiles/bundle/')
 else
-  " Usual quickstart instructions
-  set rtp+=~/.vim/bundle/vundle/
-  call vundle#rc()
+    " Usual quickstart instructions
+    set rtp+=~/.vim/bundle/vundle/
+    call vundle#rc()
 endif
 call vundle#begin()
 
@@ -63,8 +63,8 @@ let g:autoformat_verbosemode = 1
 let g:formatdef_my_custom_python = '"python -m autopep8 - --aggressive --aggressive"'
 let g:formatters_python = ['my_custom_python']
 
-" let g:formatdef_my_custom_cs = '"C:\Users\dythompson\Downloads\AStyle_2.05.1_windows\AStyle\bin\AStyle.exe"'
-" let g:formatters_cs = ['my_custom_cs']
+let g:formatdef_my_custom_cs = '"astyle --mode=cs --style=allman --indent-namespaces --indent-switches --add-brackets --min-conditional-indent=1 --max-code-length=100"'
+let g:formatters_cs = ['my_custom_cs']
 
 
 " General
@@ -114,44 +114,44 @@ set backspace=indent,eol,start
 
 " Almost all the time the mouse works just fine, thus enable it.
 if has('mouse')
-  set mouse=a
+    set mouse=a
 endif
 
 
 command! -bar -nargs=* -range=% Interleave :<line1>,<line2>call Interleave(<f-args>)
 fun! Interleave(...) range
-  if a:0 == 0
-    let x = 1
-    let y = 1
-  elseif a:0 == 1
-    let x = a:1
-    let y = a:1
-  elseif a:0 == 2
-    let x = a:1
-    let y = a:2
-  elseif a:0 > 2
-    echohl WarningMsg
-    echo "Argument Error: can have at most 2 arguments"
-    echohl None
-    return
-  endif
-  let i = a:firstline + x - 1
-  let total = a:lastline - a:firstline + 1
-  let j = total / (x + y) * x + a:firstline
-  while j < a:lastline
-    let range = y > 1 ? j . ',' . (j+y) : j
-    silent exe range . 'move ' . i
-    let i += y + x
-    let j += y
-  endwhile
+    if a:0 == 0
+        let x = 1
+        let y = 1
+    elseif a:0 == 1
+        let x = a:1
+        let y = a:1
+    elseif a:0 == 2
+        let x = a:1
+        let y = a:2
+    elseif a:0 > 2
+        echohl WarningMsg
+        echo "Argument Error: can have at most 2 arguments"
+        echohl None
+        return
+    endif
+    let i = a:firstline + x - 1
+    let total = a:lastline - a:firstline + 1
+    let j = total / (x + y) * x + a:firstline
+    while j < a:lastline
+        let range = y > 1 ? j . ',' . (j+y) : j
+        silent exe range . 'move ' . i
+        let i += y + x
+        let j += y
+    endwhile
 endfun
 
 " " Convenient command to see the difference between the current buffer and the
 " " file it was loaded from, thus the changes you made.
 " " Only define it when not defined already.
 " if !exists(":DiffOrig")
-    " command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
-		   " \ | wincmd p | diffthis
+" command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+" \ | wincmd p | diffthis
 " endif
 
 
@@ -167,7 +167,7 @@ endfun
 " If you have .vim-backup in the current directory, it'll use that.
 " Otherwise it saves it to ~/.vim/backup or . if all else fails.
 if isdirectory($HOME . '/vimfiles/backup') == 0
-  :silent !mkdir -p ~/vimfiles/backup >/dev/null 2>&1
+    :silent !mkdir -p ~/vimfiles/backup >/dev/null 2>&1
 endif
 set backupdir-=.
 set backupdir+=.
@@ -180,7 +180,7 @@ set backup
 " If you have .vim-swap in the current directory, it'll use that.
 " Otherwise it saves it to ~/.vim/swap, ~/tmp or .
 if isdirectory($HOME . '/vimfiles/swap') == 0
-  :silent !mkdir -p ~/vimfiles/swap >/dev/null 2>&1
+    :silent !mkdir -p ~/vimfiles/swap >/dev/null 2>&1
 endif
 set directory=./.vim-swap//
 set directory+=~/vimfiles/swap//
@@ -191,14 +191,14 @@ set directory+=.
 set viminfo+=n~/vimfiles/viminfo
 
 if exists("+undofile")
-  " undofile - This allows you to use undos after exiting and restarting
-  " This, like swap and backups, uses .vim-undo first, then ~/.vim/undo
-  " :help undo-persistence
-  " This is only present in 7.3+
-  if isdirectory($HOME . '/vimfiles/undo') == 0
-    :silent !mkdir -p ~/vimfiles/undo > /dev/null 2>&1
-  endif
-  set undodir=./.vim-undo//
-  set undodir+=~/vimfiles/undo//
-  set undofile
+    " undofile - This allows you to use undos after exiting and restarting
+    " This, like swap and backups, uses .vim-undo first, then ~/.vim/undo
+    " :help undo-persistence
+    " This is only present in 7.3+
+    if isdirectory($HOME . '/vimfiles/undo') == 0
+        :silent !mkdir -p ~/vimfiles/undo > /dev/null 2>&1
+    endif
+    set undodir=./.vim-undo//
+    set undodir+=~/vimfiles/undo//
+    set undofile
 endif
