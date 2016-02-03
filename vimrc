@@ -6,10 +6,17 @@ if has('win32') || has('win64')
     set rtp+=~/vimfiles/bundle/Vundle.vim/
     call vundle#rc('$HOME/vimfiles/bundle/')
 else
+<<<<<<< HEAD
     " Usual quickstart instructions
     set rtp+=~/.vim/bundle/vundle/
     call vundle#rc()
+=======
+  " Usual quickstart instructions
+  set rtp+=~/.vim/bundle/Vundle.vim
+  call vundle#rc()
+>>>>>>> 4adbea5dcbc1acaafb7cc857c6b0fb89a2fd3673
 endif
+
 call vundle#begin()
 
 

@@ -1,13 +1,13 @@
 # Yet another man's vim files. 
-This repo contains all my vim configs, plugins and notes. It also carries my vsvimrc
-along with. 
+This repo contains all my vim configs, plugins and notes. It also carries my
+vsvimrc along with. 
 
 ## Setup
 Clone the repo into the vim directory. For linux, this is `~/.vim`. On windows,
 use `~/vimfiles`. In gvim, this can be verified with `:version`.
 
 ```bash
-git clone https://github/harlequin144/vim.git ~/.vim
+git clone https://github.com/harlequin144/vim.git ~/.vim
 ```
 
 ###Create The `vimrc` and `gvimrc` Files
