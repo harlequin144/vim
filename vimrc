@@ -6,15 +6,9 @@ if has('win32') || has('win64')
     set rtp+=~/vimfiles/bundle/Vundle.vim/
     call vundle#rc('$HOME/vimfiles/bundle/')
 else
-<<<<<<< HEAD
     " Usual quickstart instructions
     set rtp+=~/.vim/bundle/vundle/
     call vundle#rc()
-=======
-  " Usual quickstart instructions
-  set rtp+=~/.vim/bundle/Vundle.vim
-  call vundle#rc()
->>>>>>> 4adbea5dcbc1acaafb7cc857c6b0fb89a2fd3673
 endif
 
 call vundle#begin()
@@ -125,49 +119,10 @@ if has('mouse')
 endif
 
 
-command! -bar -nargs=* -range=% Interleave :<line1>,<line2>call Interleave(<f-args>)
-fun! Interleave(...) range
-    if a:0 == 0
-        let x = 1
-        let y = 1
-    elseif a:0 == 1
-        let x = a:1
-        let y = a:1
-    elseif a:0 == 2
-        let x = a:1
-        let y = a:2
-    elseif a:0 > 2
-        echohl WarningMsg
-        echo "Argument Error: can have at most 2 arguments"
-        echohl None
-        return
-    endif
-    let i = a:firstline + x - 1
-    let total = a:lastline - a:firstline + 1
-    let j = total / (x + y) * x + a:firstline
-    while j < a:lastline
-        let range = y > 1 ? j . ',' . (j+y) : j
-        silent exe range . 'move ' . i
-        let i += y + x
-        let j += y
-    endwhile
-endfun
-
-" " Convenient command to see the difference between the current buffer and the
-" " file it was loaded from, thus the changes you made.
-" " Only define it when not defined already.
-" if !exists(":DiffOrig")
-" command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
-" \ | wincmd p | diffthis
-" endif
-
-
 
 " The following is taken from
 " http://stackoverflow.com/questions/4331776/
 " change-vim-swap-backup-undo-file-name
-
-
 
 
 " Save your backups to a less annoying place than the current directory.
