@@ -39,6 +39,10 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'Chiel92/vim-autoformat'
 " Plugin 'Valloric/YouCompleteMe'
 
+Plugin 'godlygeek/tabular' " This must come before vim-markdown!!!
+Plugin 'plasticboy/vim-markdown'
+
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required by Vundle
