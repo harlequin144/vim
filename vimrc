@@ -14,6 +14,7 @@ endif
 call vundle#begin()
 
 
+
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
@@ -34,13 +35,19 @@ Plugin 'VundleVim/Vundle.vim'
 "Plugin 'user/L9', {'name': 'newL9'}
 
 
-Plugin 'unblevable/quick-scope'
+" Color schemes
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'https://github.com/hhsnopek/vim-firewatch.git'
+Plugin 'https://github.com/juanedi/predawn.vim.git'
+
+
+Plugin 'unblevable/quick-scope'
 Plugin 'Chiel92/vim-autoformat'
 " Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'godlygeek/tabular' " This must come before vim-markdown!!!
 Plugin 'plasticboy/vim-markdown'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 
 
@@ -72,11 +79,31 @@ let g:formatdef_my_custom_cs = '"astyle --mode=cs --style=allman --indent-namesp
 let g:formatters_cs = ['my_custom_cs']
 
 
+" Ctrlp Settings 
+" let g:ctrlp_map = '<c-q>'
+map <Leader>o  :CtrlPMixed<CR>
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+"let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+"let g:ctrlp_custom_ignore = {
+"  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+"  \ 'file': '\v\.(exe|so|dll)$',
+"  \ 'link': 'some_bad_symbolic_links',
+"  \ }
+
+" Ignore files in .gitignore
+"  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+
 " General
 
 syntax enable
 set background=dark " dark | light
-colorscheme solarized
+colorscheme predawn
 
 set title " This gives e.g. | page.html (~) - VIM |.
 
@@ -93,6 +120,7 @@ set scrolloff=3         " start scrolling three lines before the border
 set showmatch		" Show matching brackets.
 set history=50		" keep 50 lines of command line history
 set number
+set relativenumber
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set smartindent
