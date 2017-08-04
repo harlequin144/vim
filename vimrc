@@ -1,6 +1,11 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+
+"
+" P L U G   I N S
+"
+
 " set the runtime path to include Vundle and initialize
 if has('win32') || has('win64')
     set rtp+=~/vimfiles/bundle/Vundle.vim/
@@ -12,7 +17,6 @@ else
 endif
 
 call vundle#begin()
-
 
 
 " let Vundle manage Vundle, required
@@ -50,7 +54,6 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'ctrlpvim/ctrlp.vim'
 
 
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required by Vundle
 filetype plugin indent on    " required by Vundle
@@ -72,11 +75,14 @@ filetype plugin indent on    " required by Vundle
 map <Leader>f  :Autoformat<CR>
 let g:autoformat_verbosemode = 1
 
-let g:formatdef_my_custom_python = '"python -m autopep8 - --aggressive --aggressive"'
+let g:formatdef_my_custom_python = '"python -m autopep8 - --aggressive --aggressive --indent-size=4"'
 let g:formatters_python = ['my_custom_python']
 
 let g:formatdef_my_custom_cs = '"astyle --mode=cs --style=allman --indent-namespaces --indent-switches --add-brackets --min-conditional-indent=1 --max-code-length=100"'
 let g:formatters_cs = ['my_custom_cs']
+
+" Disable Auto-folding in markdown files.
+let g:vim_markdown_folding_disabled = 1
 
 
 " Ctrlp Settings 
@@ -99,13 +105,20 @@ set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 "  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 
-" General
+
+"
+" G E N E R A L   S E T T I N G S
+"
 
 syntax enable
 set background=dark " dark | light
-colorscheme predawn
+colorscheme solarized
 
 set title " This gives e.g. | page.html (~) - VIM |.
+
+" Allow modeline
+set modeline
+set modelines=5
 
 set tw=80
 
@@ -129,6 +142,7 @@ set tabstop=8
 set expandtab 
 set shiftwidth=4 
 set softtabstop=4
+set shiftround
 
 imap jk <esc>
 imap kj <esc>
