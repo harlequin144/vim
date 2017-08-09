@@ -1,0 +1,8 @@
+syntax enable
+colorscheme solarized
+
+set ignorecase
+set smartcase
+
+set number
+
