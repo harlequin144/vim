@@ -17,6 +17,8 @@ syn keyword keywordKeywords CALL PRINT
 syn keyword imageKeywords IMAGE 
 syn match endImageMatch 'END IMAGE'
 
+syn match commentMatch '^\s*\*.*$'
+
 " Matches
 syn match numberMatch '\s\d\+' 
 syn match stringMatch "\'[^']*'" 
@@ -29,7 +31,7 @@ syn match identifierMatch '%[A-Za-z0-9.]\+'
 "
 let b:current_syntax = "m204"
 
-hi def link controlKeywords       Statement 
+hi def link controlKeywords         Statement 
 
 hi def link conditionalKeywords     Conditional
 hi def link conditionalMatch        Conditional
@@ -46,3 +48,5 @@ hi def link typeKeywords            Type
 
 hi def link imageKeywords           Structure      
 hi def link endImageMatch           Structure      
+
+hi def link commentMatch            Comment      
